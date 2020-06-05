@@ -56,4 +56,4 @@ document.remove = function() {
 }
 ```
 
-Next: [step03.md](./step06.md)
+Next: [step03.md](./step03.md)
