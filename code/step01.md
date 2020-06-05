@@ -50,4 +50,4 @@ document.remove = function() {
 }
 ```
 
-Next: [step04.md](./step02.md)
+Next: [step02.md](./step02.md)
