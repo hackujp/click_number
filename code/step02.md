@@ -1,4 +1,4 @@
-# Step 2. ボタンのデザインを変えてみよう
+# 演習2. JavaScript から HTML を制御しよう
 
 index.html
 
@@ -12,10 +12,7 @@ index.html
 </head>
 
 <body>
-	<div id="app"></div>
-	<div>
-		<button class="circle">1</button>
-	</div>	
+	<div id="main"></div>
 
 	<script src="src/index.js">
 	</script>
@@ -41,4 +38,22 @@ body {
 }
 ```
 
-Next: [step03.md](./step03.md)
+src/index.js
+
+```js
+import "./styles.css";
+
+var num = 1; 
+var elm = document.createElement("button");
+elm.innerHTML = num;
+elm.setAttribute("id", num); 
+elm.setAttribute("class", "circle"); 
+elm.setAttribute("onclick", "remove()");
+document.getElementById("main").appendChild(elm);
+
+document.remove = function() {
+	document.getElementById("main").removeChild(document.getElementById("1"));
+}
+```
+
+Next: [step03.md](./step06.md)

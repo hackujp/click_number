@@ -1,4 +1,4 @@
-# Step 4. JavaScript から HTML 要素 を追加しよう
+# 演習４. ボタンを数の小さい順に押すと消えていくようにしよう
 
 index.html
 
@@ -43,16 +43,35 @@ src/index.js
 ```js
 import "./styles.css";
 
-var elm = document.createElement("button");
-elm.innerHTML = 1;
-elm.setAttribute("id", 1); 
-elm.setAttribute("class", "circle"); 
-elm.setAttribute("onclick", "remove()");
-document.getElementById("main").appendChild(elm);
+for (var num=9;num>0;num--) {
+	var elm = document.createElement("button");
+	elm.innerHTML = num;
+	elm.setAttribute("id", num); 
+	elm.setAttribute("class", "circle"); 
+	var function_name = "remove(" + num + ")" 
+	elm.setAttribute("onclick", function_name);
+	document.getElementById("main").appendChild(elm);
 
-document.remove = function() {
-	document.getElementById("main").removeChild(document.getElementById("1"));
+	var left = 10;
+	var top = 100;
+
+	left = left + Math.floor(Math.random() * 400);
+	top = top + Math.floor(Math.random() * 600);
+
+	document.getElementById(num).style.left = "" + left + "px" ;
+	document.getElementById(num).style.top = "" + top + "px" ;
+}
+
+var next = 1;
+document.remove = function (id) {
+	if (id === next) {
+		document.getElementById("main").removeChild(document.getElementById(id));
+		next = next + 1;
+	}
 }
 ```
 
-Next: [step05.md](./step05.md)
+応用編
+* [丸の大きさをランダムにする](./advance01.md)
+* [色をランダムにする](./advance02.md)
+* [経過時間で数字を再配置する](./advance03.md)

@@ -1,4 +1,4 @@
-# Step 3. ボタンをクリックしたら消えるようにしよう
+# 演習３ .ボタンをランダムに配置させてたくさん表示させてみよう
 
 index.html
 
@@ -12,9 +12,7 @@ index.html
 </head>
 
 <body>
-	<div id="main">
-		<button class="circle" id="1" onclick="remove()">1</button>
-	</div>
+	<div id="main"></div>
 
 	<script src="src/index.js">
 	</script>
@@ -45,7 +43,25 @@ src/index.js
 ```js
 import "./styles.css";
 
-document.remove = function() {
+for (var num=1;num<10;num++) {
+	var elm = document.createElement("button");
+	elm.innerHTML = num;
+	elm.setAttribute("id", num); 
+	elm.setAttribute("class", "circle"); 
+	elm.setAttribute("onclick", "remove()");
+	document.getElementById("main").appendChild(elm);
+
+	var left = 10;
+	var top = 100;
+
+	left = left + Math.floor(Math.random() * 400);
+	top = top + Math.floor(Math.random() * 600);
+
+	document.getElementById(num).style.left = "" + left + "px" ;
+	document.getElementById(num).style.top = "" + top + "px" ;
+}
+
+window.remove = function() {
 	document.getElementById("main").removeChild(document.getElementById("1"));
 }
 ```

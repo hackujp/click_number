@@ -1,4 +1,4 @@
-# Step 1. ボタンを配置してみよう
+# 演習1. ボタンを表示させたり消したりできるようにしよう
 
 index.html
 
@@ -12,10 +12,9 @@ index.html
 </head>
 
 <body>
-	<div id="app"></div>
-	<div>
-		<button>1</button>
-	</div>	
+	<div id="main">
+		<button class="circle" id="1" onclick="remove()">1</button>
+	</div>
 
 	<script src="src/index.js">
 	</script>
@@ -24,4 +23,31 @@ index.html
 </html>
 ```
 
-Next: [step02.md](./step02.md)
+src/style.css
+
+```css
+body {
+	font-family: sans-serif;
+}
+
+.circle {
+	background-color: skyblue;
+	border-radius: 30px;
+	height: 60px;
+	width: 60px;
+	font-size: 24px;
+	position: absolute;
+}
+```
+
+src/index.js
+
+```js
+import "./styles.css";
+
+document.remove = function() {
+	document.getElementById("main").removeChild(document.getElementById("1"));
+}
+```
+
+Next: [step04.md](./step02.md)
