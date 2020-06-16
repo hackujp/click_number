@@ -52,11 +52,11 @@ for (var num=9;num>0;num--) {
 	elm.setAttribute("onclick", function_name);
 	document.getElementById("main").appendChild(elm);
 
-	var left = 10;
-	var top = 100;
+	var left_pos = 10;
+	var top_pos = 100;
 
-	left = left + Math.floor(Math.random() * 400);
-	top = top + Math.floor(Math.random() * 600);
+	left_pos = left_pos + Math.floor(Math.random() * 400);
+	top_pos = top_pos + Math.floor(Math.random() * 600);
 
 	document.getElementById(num).style.left = "" + left + "px" ;
 	document.getElementById(num).style.top = "" + top + "px" ;
