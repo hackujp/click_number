@@ -58,8 +58,8 @@ for (var num=9;num>0;num--) {
 	left_pos = left_pos + Math.floor(Math.random() * 400);
 	top_pos = top_pos + Math.floor(Math.random() * 600);
 
-	document.getElementById(num).style.left = "" + left + "px" ;
-	document.getElementById(num).style.top = "" + top + "px" ;
+	document.getElementById(num).style.left = "" + left_pos + "px" ;
+	document.getElementById(num).style.top = "" + top_pos + "px" ;
 }
 
 var next = 1;
